@@ -1,7 +1,6 @@
 import Phonebook from './Phonebook/Phonebook';
 import Main from './Main/Main';
 import Contacts from './Phonebook/Contacts/Contacts';
-import { useSelector } from 'react-redux';
 import { useGetContactsQuery } from 'redux/contactsSlice';
 
 const App = () => {
