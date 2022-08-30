@@ -2,18 +2,18 @@ import Phonebook from './Phonebook/Phonebook';
 import Main from './Main/Main';
 import Contacts from './Phonebook/Contacts/Contacts';
 import { useSelector } from 'react-redux';
+import { useGetContactsQuery } from 'redux/contactsSlice';
 
 const App = () => {
-  const contacts = useSelector(state => state.contacts.items);
+  const { data, error, isLoading } = useGetContactsQuery();
+  console.log(data);
+  console.log(isLoading);
 
   return (
     <Main title="Phonebook">
       <Phonebook />
-      {contacts.length > 0 ? (
-        <Contacts name="Contacts" />
-      ) : (
-        <p>Phonebook empty</p>
-      )}
+      {!isLoading ? <Contacts name="Contacts" /> : <p>Phonebook empty</p>}
+      {error && <p>Sorry.. somethiing wrong. Try again.</p>}
     </Main>
   );
 };
