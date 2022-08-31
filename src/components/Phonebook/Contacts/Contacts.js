@@ -29,7 +29,7 @@ const Contacts = ({ name }) => {
         <InputFilter />
       </LabelFilter>
       <ul>
-        {data.map(data => (
+        {visibleContacts.map(data => (
           <li key={data.id}>
             <span>
               {data.name} {data.phone}
