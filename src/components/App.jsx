@@ -1,12 +1,10 @@
 import Phonebook from './Phonebook/Phonebook';
 import Main from './Main/Main';
 import Contacts from './Phonebook/Contacts/Contacts';
-import { useGetContactsQuery } from 'redux/contactsSlice';
+import { useGetContactsQuery } from 'redux/contactsApi';
 
 const App = () => {
   const { data, error, isLoading } = useGetContactsQuery();
-  console.log(data);
-  console.log(isLoading);
 
   return (
     <Main title="Phonebook">

@@ -1,8 +1,5 @@
 import { useState } from 'react';
-import {
-  useGetContactsQuery,
-  useAddContactMutation,
-} from 'redux/contactsSlice';
+import { useGetContactsQuery, useAddContactMutation } from 'redux/contactsApi';
 import Notiflix from 'notiflix';
 
 import InputName from './Input/InputName/InputName';
