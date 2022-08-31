@@ -11,7 +11,11 @@ const App = () => {
   return (
     <Main title="Phonebook">
       <Phonebook />
-      {!isLoading ? <Contacts name="Contacts" /> : <p>Phonebook empty</p>}
+      {!isLoading && data.length > 0 ? (
+        <Contacts name="Contacts" />
+      ) : (
+        <p>Phonebook empty</p>
+      )}
       {error && <p>Sorry.. somethiing wrong. Try again.</p>}
     </Main>
   );

@@ -1,6 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { filterSlice, contactsApi } from './contactsSlice';
 
+console.log(filterSlice);
+
 export const store = configureStore({
   reducer: {
     [contactsApi.reducerPath]: contactsApi.reducer,

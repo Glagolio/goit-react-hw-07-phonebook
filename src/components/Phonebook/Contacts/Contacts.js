@@ -9,17 +9,18 @@ import {
   useDeleteContactMutation,
   useGetContactsQuery,
 } from 'redux/contactsSlice';
+import { useSelector } from 'react-redux';
 
 const Contacts = ({ name }) => {
   // const dispatch = useDispatch();
   const { data } = useGetContactsQuery();
   const [deleteContact] = useDeleteContactMutation();
   // const contacts = useSelector(state => state.contacts.items);
-  // const filter = useSelector(state => state.contacts.filter);
-  // const normolizeFilter = filter.toLowerCase();
-  // const visibleContacts = contacts.filter(contact =>
-  //   contact.name.toLowerCase().includes(normolizeFilter)
-  // );
+  const filter = useSelector(state => state.filter);
+  const normolizeFilter = filter.toLowerCase();
+  const visibleContacts = data.filter(contact =>
+    contact.name.toLowerCase().includes(normolizeFilter)
+  );
 
   return (
     <ContactsItem>

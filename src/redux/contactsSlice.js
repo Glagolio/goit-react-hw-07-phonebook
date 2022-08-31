@@ -39,14 +39,8 @@ export const filterSlice = createSlice({
   name: 'filter',
   initialState: '',
   reducers: {
-    // addContact(state, action) {
-    //   state.items.push(action.payload);
-    // },
-    // removeContact(state, action) {
-    //   state.items = state.items.filter(item => item.id !== action.payload);
-    // },
-    filterContacts(state, action) {
-      state.filter = action.payload;
+    filterContacts({ filter }, action) {
+      filter = action.payload;
     },
   },
 });
